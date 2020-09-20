@@ -1,0 +1,36 @@
+
+Node.js والأداة Gulp
+
+قلب يعتمد عل النود فلذلك يجب ان تنزل اولا 
+نزلها من الموقع nodejs.org
+
+
+ولكن اذا نازلة ما في داعي، تاكد عن طريق
+npm -v
+gulp -v
+
+
+
+npm init       to download package.jason
+npm install --save-dev gulp   this for gulp download   
+
+اعمل ملف قلب او خده من مجلد اخر ثم نزل:    
+
+npm install --save-dev gulp-connect
+npm install gulp-clean-css --save-dev
+npm install gulp-uglify                           this is for js
+npm install del
+npm install node-sass gulp-sass --save-dev
+
+
+
+لاحظ استخدام السهم
+
+const gulp = require('gulp');
+const cleanCSS = require('gulp-clean-css');
+ 
+gulp.task('minify-css', () => {
+  return gulp.src('styles/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('dist'));
+});
